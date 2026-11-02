@@ -1,0 +1,13 @@
+psutil>=5.9
+# Exact volume control for the set_volume action (Windows only; optional at runtime).
+pycaw>=20230407
+# UI Automation, which is how Retro reads the labels in a window and clicks a button
+# by name (core/tools.py). Needed for "type this and send it" in any application;
+# without it, opening and focusing and typing still work.
+#   pip install uiautomation
+uiautomation>=2.0
+# Retro's eyes: screenshots and finding a picture on screen (core/screen.py).
+# pyscreeze + Pillow capture and match; opencv-python is what makes the
+# `confidence` option in find_on_screen work - without it the match is exact.
+pyautogui>=0.9.54
+opencv-python>=4.8

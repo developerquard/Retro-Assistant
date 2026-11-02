@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+eval_*.txt
+.freebuff/
+build/
+dist/
+*.log
+
+# Scratch runs and local state - never part of the product.
+.preview/
+.retro/
+_probe_home*/
+*.status
+# Keys never go in the repository.
+tokenharbor.key
+*.key

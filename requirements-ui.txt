@@ -1,0 +1,10 @@
+# The window (M5). PySide6-Essentials is the LGPL Qt subset: QtCore, QtGui,
+# QtWidgets and QtSvg, which is all ui/ imports. The full PySide6 package adds
+# QtWebEngine and friends, which nothing here uses.
+PySide6-Essentials>=6.7
+
+# Packaging only: tools/build_exe.py and retro_ui.spec.
+pyinstaller>=6.6
+
+# Drawing assets/retro.ico, via tools/make_icon.py. Not imported at run time.
+pillow>=10.0

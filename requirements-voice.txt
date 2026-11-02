@@ -1,0 +1,17 @@
+sounddevice>=0.4
+numpy>=1.26
+faster-whisper>=1.0
+# faster-whisper still calls av.open(metadata_errors=...), which PyAV 19 removed.
+av<19
+
+# Speech OUT talks to SAPI through comtypes rather than pyttsx3. pyttsx3 wraps the
+# same object but hangs on the second line in a row - its second runAndWait() never
+# returns, which is what left the assistant green and silent until it was restarted.
+# tools/tts_probe.py shows both. comtypes is also what pycaw needs (requirements.txt).
+comtypes>=1.2
+
+# Japanese and Hindi (core/neuralvoice.py). Windows has no SAPI voice for either on
+# a normal install, so those sentences go to Microsoft's neural voices through
+# edge-tts: no key, no account. The audio is decoded with PyAV, which faster-whisper
+# already brings, so this is the only new dependency. English never needs it.
+edge-tts>=7.0
